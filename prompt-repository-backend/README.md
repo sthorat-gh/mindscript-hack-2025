@@ -15,7 +15,8 @@ A simple Spring Boot backend for managing prompts with CRUD operations.
 
 - Java 17 or higher
 - Gradle 7.x or higher
-- PostgreSQL 12 or higher
+- PostgreSQL 12 or higher (or use Podman to run it in a container)
+- Podman and podman-compose (for containerized PostgreSQL)
 
 ## Getting Started
 
@@ -27,21 +28,16 @@ A simple Spring Boot backend for managing prompts with CRUD operations.
 
 3. Set up PostgreSQL database:
    
-   **Option 1: Using Docker Compose (Recommended)**
+   **Option 1: Using the One-Stop Script (Recommended)**
    ```bash
-   # Using the convenience script
-   ./docker/docker.sh start
-   
-   # Or using docker-compose directly
-   docker-compose -f docker/docker-compose.yml up -d
+   # This will install Podman if needed and start PostgreSQL
+   ./podman/container.sh start
    ```
    
-   **Option 2: Manual PostgreSQL Setup**
-   - Create a database using the provided script:
-     ```bash
-     psql -U postgres -f docker/create-database.sql
-     ```
-   - Or manually create a database named `promptrepo`
+   The script automatically handles:
+   - Installing Podman and podman-compose if not present
+   - Setting up Podman machine on macOS
+   - Starting the PostgreSQL container
    
    **Configure database credentials** (if using custom settings):
    ```bash
@@ -165,37 +161,25 @@ curl -X POST http://localhost:8081/api/categories \
 
 The application uses PostgreSQL database. Make sure to have PostgreSQL installed and running with a database named `promptrepo` created. You can customize the database connection settings through environment variables or by updating the `application.yml` file.
 
-### Running with Docker Compose
+### Running with Podman Compose
 
 **Using the convenience script:**
 ```bash
 # Start PostgreSQL
-./docker/docker.sh start
+./podman/container.sh start
 
 # Stop PostgreSQL
-./docker/docker.sh stop
+./podman/container.sh stop
 
 # Restart PostgreSQL
-./docker/docker.sh restart
+./podman/container.sh restart
 
 # Stop and remove all data
-./docker/docker.sh clean
+./podman/container.sh clean
 
 # View logs
-./docker/docker.sh logs
+./podman/container.sh logs
 
 # Check status
-./docker/docker.sh status
-```
-
-**Or using docker-compose directly:**
-```bash
-# Start PostgreSQL
-docker-compose -f docker/docker-compose.yml up -d
-
-# Stop PostgreSQL
-docker-compose -f docker/docker-compose.yml down
-
-# Stop and remove all data
-docker-compose -f docker/docker-compose.yml down -v
+./podman/container.sh status
 ```
