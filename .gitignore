@@ -1,0 +1,99 @@
+# Gradle (backend specific)
+prompt-repository-backend/.gradle/
+prompt-repository-backend/build/
+!prompt-repository-backend/gradle/wrapper/gradle-wrapper.jar
+!prompt-repository-backend/**/src/main/**/build/
+!prompt-repository-backend/**/src/test/**/build/
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Compiled class files
+*.class
+
+# Application properties for local development
+application-local.yml
+application-local.properties
+prompt-repository-backend/src/main/resources/application-local.yml
+prompt-repository-backend/src/main/resources/application-local.properties
+
+# Docker volumes (if running locally)
+prompt-repository-backend/docker/postgres_data/
+
+# Node modules (for future frontend)
+node_modules/
+dist/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python (for scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
