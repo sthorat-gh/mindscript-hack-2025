@@ -1,0 +1,1 @@
+MindScript (Hackathon Aug-2025)
