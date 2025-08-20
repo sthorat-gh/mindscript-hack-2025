@@ -61,8 +61,8 @@ application-local.properties
 prompt-repository-backend/src/main/resources/application-local.yml
 prompt-repository-backend/src/main/resources/application-local.properties
 
-# Docker volumes (if running locally)
-prompt-repository-backend/docker/postgres_data/
+# Podman volumes (if running locally)
+prompt-repository-backend/podman/postgres_data/
 
 # Node modules (for future frontend)
 node_modules/
